@@ -14,9 +14,9 @@
 
 @implementation SubscriptionWindowController
 
-- (id)initWithWindow:(NSWindow *)window
+- (id)init
 {
-    self = [super initWithWindow:window];
+    self = [super initWithWindowNibName:@"SubscriptionWindow"];
     if (self) {
         // Initialization code here.
     }

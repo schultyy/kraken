@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SubscriptionWindowController : NSWindowController
+@interface SubscriptionWindowController : NSWindowController{
+    NSManagedObjectContext *managedObjectContext;
+}
+
+@property (strong) NSManagedObjectContext *managedObjectContext;
 
 @end
