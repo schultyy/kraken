@@ -58,6 +58,9 @@
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                <connections>
+                                                                    <binding destination="9Is-DX-WyZ" name="value" keyPath="objectValue.url" id="Nyn-Aw-Mma"/>
+                                                                </connections>
                                                             </textFieldCell>
                                                         </textField>
                                                     </subviews>
@@ -68,6 +71,9 @@
                                             </prototypeCellViews>
                                         </tableColumn>
                                     </tableColumns>
+                                    <connections>
+                                        <binding destination="5nr-wo-kdj" name="content" keyPath="arrangedObjects" id="cFm-ZD-Jfu"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -84,7 +90,7 @@
                 </subviews>
             </view>
         </window>
-        <arrayController mode="entity" entityName="Feed" editable="NO" id="5nr-wo-kdj">
+        <arrayController mode="entity" entityName="Feed" editable="NO" automaticallyPreparesContent="YES" id="5nr-wo-kdj" userLabel="Feeds">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="managedObjectContext" id="Uki-1M-pfw"/>
             </connections>
