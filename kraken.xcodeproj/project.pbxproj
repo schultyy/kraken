@@ -19,6 +19,7 @@
 		D43D7F97184699360069A692 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43D7F73184699360069A692 /* Cocoa.framework */; };
 		D43D7F9F184699360069A692 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D43D7F9D184699360069A692 /* InfoPlist.strings */; };
 		D43D7FA1184699360069A692 /* krakenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43D7FA0184699360069A692 /* krakenTests.m */; };
+		D43D7FAC184699C60069A692 /* SubscriptionWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43D7FAB184699C60069A692 /* SubscriptionWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		D43D7F9C184699360069A692 /* krakenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "krakenTests-Info.plist"; sourceTree = "<group>"; };
 		D43D7F9E184699360069A692 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D43D7FA0184699360069A692 /* krakenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = krakenTests.m; sourceTree = "<group>"; };
+		D43D7FAB184699C60069A692 /* SubscriptionWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriptionWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				D43D7F88184699360069A692 /* MainMenu.xib */,
+				D43D7FAB184699C60069A692 /* SubscriptionWindow.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D43D7FAC184699C60069A692 /* SubscriptionWindow.xib in Resources */,
 				D43D7F7E184699360069A692 /* InfoPlist.strings in Resources */,
 				D43D7F8F184699360069A692 /* Images.xcassets in Resources */,
 				D43D7F84184699360069A692 /* Credits.rtf in Resources */,
