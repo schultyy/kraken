@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SubscriptionWindowController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -15,7 +16,10 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (retain) SubscriptionWindowController *subscriptionController;
 
 - (IBAction)saveAction:(id)sender;
+
+-(IBAction)showSubscriptions:(id)sender;
 
 @end

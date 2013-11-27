@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SubscriptionWindowController.h"
 
 @implementation AppDelegate
 
@@ -17,6 +18,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    [self setSubscriptionController: [[SubscriptionWindowController alloc] init]];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "schultyy.kraken" in the user's Application Support directory.
@@ -178,6 +180,10 @@
     }
 
     return NSTerminateNow;
+}
+
+-(IBAction)showSubscriptions:(id)sender{
+    [[self subscriptionController] showWindow:sender];
 }
 
 @end
