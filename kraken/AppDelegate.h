@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MainWindowController.h"
 #import "SubscriptionWindowController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
@@ -17,6 +18,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (retain) SubscriptionWindowController *subscriptionController;
+@property (retain) MainWindowController *mainWindowController;
 
 - (IBAction)saveAction:(id)sender;
 

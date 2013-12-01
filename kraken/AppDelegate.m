@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MainWindowController.h"
 #import "SubscriptionWindowController.h"
 
 @implementation AppDelegate
@@ -20,7 +21,9 @@
     // Insert code here to initialize your application
     [self setSubscriptionController: [[SubscriptionWindowController alloc] init]];
     
-//    [[self subscriptionController] setManagedObjectContext: [self managedObjectContext]];
+    [self setMainWindowController: [[MainWindowController alloc] init]];
+    
+    [[self mainWindowController] showWindow:nil];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "schultyy.kraken" in the user's Application Support directory.
