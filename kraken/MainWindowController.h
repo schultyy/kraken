@@ -12,4 +12,6 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
+-(NSArray *) feeds;
+
 @end
