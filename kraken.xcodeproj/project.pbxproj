@@ -21,6 +21,8 @@
 		D43D7FA1184699360069A692 /* krakenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43D7FA0184699360069A692 /* krakenTests.m */; };
 		D43D7FAC184699C60069A692 /* SubscriptionWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43D7FAB184699C60069A692 /* SubscriptionWindow.xib */; };
 		D43D7FB118469A0C0069A692 /* SubscriptionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43D7FB018469A0C0069A692 /* SubscriptionWindowController.m */; };
+		D4A03D20184B6B4E00479112 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A03D1F184B6B4E00479112 /* MainWindow.xib */; };
+		D4A03D23184B6B8700479112 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A03D22184B6B8700479112 /* MainWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		D43D7FAB184699C60069A692 /* SubscriptionWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriptionWindow.xib; sourceTree = "<group>"; };
 		D43D7FAF18469A0C0069A692 /* SubscriptionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionWindowController.h; sourceTree = "<group>"; };
 		D43D7FB018469A0C0069A692 /* SubscriptionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionWindowController.m; sourceTree = "<group>"; };
+		D4A03D1F184B6B4E00479112 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		D4A03D21184B6B8700479112 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		D4A03D22184B6B8700479112 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +173,7 @@
 			children = (
 				D43D7F88184699360069A692 /* MainMenu.xib */,
 				D43D7FAB184699C60069A692 /* SubscriptionWindow.xib */,
+				D4A03D1F184B6B4E00479112 /* MainWindow.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -177,6 +183,8 @@
 			children = (
 				D43D7FAF18469A0C0069A692 /* SubscriptionWindowController.h */,
 				D43D7FB018469A0C0069A692 /* SubscriptionWindowController.m */,
+				D4A03D21184B6B8700479112 /* MainWindowController.h */,
+				D4A03D22184B6B8700479112 /* MainWindowController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 			files = (
 				D43D7FAC184699C60069A692 /* SubscriptionWindow.xib in Resources */,
 				D43D7F7E184699360069A692 /* InfoPlist.strings in Resources */,
+				D4A03D20184B6B4E00479112 /* MainWindow.xib in Resources */,
 				D43D7F8F184699360069A692 /* Images.xcassets in Resources */,
 				D43D7F84184699360069A692 /* Credits.rtf in Resources */,
 				D43D7F8A184699360069A692 /* MainMenu.xib in Resources */,
@@ -288,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A03D23184B6B8700479112 /* MainWindowController.m in Sources */,
 				D43D7F8D184699360069A692 /* kraken.xcdatamodeld in Sources */,
 				D43D7F87184699360069A692 /* AppDelegate.m in Sources */,
 				D43D7FB118469A0C0069A692 /* SubscriptionWindowController.m in Sources */,
@@ -502,6 +512,7 @@
 				D43D7FA6184699360069A692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D43D7FA7184699360069A692 /* Build configuration list for PBXNativeTarget "krakenTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +521,7 @@
 				D43D7FA9184699360069A692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
