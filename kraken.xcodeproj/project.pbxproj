@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D4388CCC184E7FD90065B863 /* XmlParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4388CCB184E7FD90065B863 /* XmlParserDelegate.m */; };
+		D4388CD2184E909E0065B863 /* FeedHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D4388CD1184E909E0065B863 /* FeedHeader.m */; };
+		D4388CD5184E91340065B863 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D4388CD4184E91340065B863 /* FeedItem.m */; };
 		D43D7F74184699360069A692 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43D7F73184699360069A692 /* Cocoa.framework */; };
 		D43D7F7E184699360069A692 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D43D7F7C184699360069A692 /* InfoPlist.strings */; };
 		D43D7F80184699360069A692 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D43D7F7F184699360069A692 /* main.m */; };
@@ -40,6 +42,10 @@
 /* Begin PBXFileReference section */
 		D4388CCA184E7FD90065B863 /* XmlParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParserDelegate.h; sourceTree = "<group>"; };
 		D4388CCB184E7FD90065B863 /* XmlParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlParserDelegate.m; sourceTree = "<group>"; };
+		D4388CD0184E909E0065B863 /* FeedHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedHeader.h; sourceTree = "<group>"; };
+		D4388CD1184E909E0065B863 /* FeedHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedHeader.m; sourceTree = "<group>"; };
+		D4388CD3184E91340065B863 /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItem.h; sourceTree = "<group>"; };
+		D4388CD4184E91340065B863 /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItem.m; sourceTree = "<group>"; };
 		D43D7F70184699360069A692 /* kraken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kraken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43D7F73184699360069A692 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D43D7F76184699360069A692 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -213,6 +219,10 @@
 				D4A03D28184B7F0400479112 /* FeedLoader.m */,
 				D4388CCA184E7FD90065B863 /* XmlParserDelegate.h */,
 				D4388CCB184E7FD90065B863 /* XmlParserDelegate.m */,
+				D4388CD0184E909E0065B863 /* FeedHeader.h */,
+				D4388CD1184E909E0065B863 /* FeedHeader.m */,
+				D4388CD3184E91340065B863 /* FeedItem.h */,
+				D4388CD4184E91340065B863 /* FeedItem.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -321,6 +331,8 @@
 				D43D7F8D184699360069A692 /* kraken.xcdatamodeld in Sources */,
 				D43D7F87184699360069A692 /* AppDelegate.m in Sources */,
 				D43D7FB118469A0C0069A692 /* SubscriptionWindowController.m in Sources */,
+				D4388CD5184E91340065B863 /* FeedItem.m in Sources */,
+				D4388CD2184E909E0065B863 /* FeedHeader.m in Sources */,
 				D4A03D29184B7F0400479112 /* FeedLoader.m in Sources */,
 				D43D7F80184699360069A692 /* main.m in Sources */,
 				D4388CCC184E7FD90065B863 /* XmlParserDelegate.m in Sources */,

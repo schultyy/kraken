@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FeedItem.h"
+#import "FeedHeader.h"
 
-@interface XmlParserDelegate : NSObject<NSXMLParserDelegate>
+@interface XmlParserDelegate : NSObject<NSXMLParserDelegate>{
+    NSMutableArray  *parserResults;
+    FeedItem        *currentFeedItem;
+    FeedHeader      *feedHeader;
+}
 
 @end
