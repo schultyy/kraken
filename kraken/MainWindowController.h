@@ -8,7 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MainWindowController : NSWindowController
+@interface MainWindowController : NSWindowController{
+}
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4388CCC184E7FD90065B863 /* XmlParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4388CCB184E7FD90065B863 /* XmlParserDelegate.m */; };
 		D43D7F74184699360069A692 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43D7F73184699360069A692 /* Cocoa.framework */; };
 		D43D7F7E184699360069A692 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D43D7F7C184699360069A692 /* InfoPlist.strings */; };
 		D43D7F80184699360069A692 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D43D7F7F184699360069A692 /* main.m */; };
@@ -23,6 +24,7 @@
 		D43D7FB118469A0C0069A692 /* SubscriptionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43D7FB018469A0C0069A692 /* SubscriptionWindowController.m */; };
 		D4A03D20184B6B4E00479112 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A03D1F184B6B4E00479112 /* MainWindow.xib */; };
 		D4A03D23184B6B8700479112 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A03D22184B6B8700479112 /* MainWindowController.m */; };
+		D4A03D29184B7F0400479112 /* FeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A03D28184B7F0400479112 /* FeedLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4388CCA184E7FD90065B863 /* XmlParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParserDelegate.h; sourceTree = "<group>"; };
+		D4388CCB184E7FD90065B863 /* XmlParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlParserDelegate.m; sourceTree = "<group>"; };
 		D43D7F70184699360069A692 /* kraken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kraken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43D7F73184699360069A692 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D43D7F76184699360069A692 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -62,6 +66,9 @@
 		D4A03D1F184B6B4E00479112 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		D4A03D21184B6B8700479112 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		D4A03D22184B6B8700479112 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		D4A03D24184B7A1000479112 /* PubSub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PubSub.framework; path = System/Library/Frameworks/PubSub.framework; sourceTree = SDKROOT; };
+		D4A03D27184B7F0400479112 /* FeedLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedLoader.h; sourceTree = "<group>"; };
+		D4A03D28184B7F0400479112 /* FeedLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +114,7 @@
 		D43D7F72184699360069A692 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4A03D24184B7A1000479112 /* PubSub.framework */,
 				D43D7F73184699360069A692 /* Cocoa.framework */,
 				D43D7F95184699360069A692 /* XCTest.framework */,
 				D43D7F75184699360069A692 /* Other Frameworks */,
@@ -127,6 +135,7 @@
 		D43D7F79184699360069A692 /* kraken */ = {
 			isa = PBXGroup;
 			children = (
+				D4A03D26184B7EF400479112 /* Services */,
 				D43D7FAE184699E50069A692 /* Models */,
 				D43D7FAD184699DC0069A692 /* Controllers */,
 				D43D7FAA1846997D0069A692 /* Resources */,
@@ -195,6 +204,17 @@
 				D43D7F8B184699360069A692 /* kraken.xcdatamodeld */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		D4A03D26184B7EF400479112 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D4A03D27184B7F0400479112 /* FeedLoader.h */,
+				D4A03D28184B7F0400479112 /* FeedLoader.m */,
+				D4388CCA184E7FD90065B863 /* XmlParserDelegate.h */,
+				D4388CCB184E7FD90065B863 /* XmlParserDelegate.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +321,9 @@
 				D43D7F8D184699360069A692 /* kraken.xcdatamodeld in Sources */,
 				D43D7F87184699360069A692 /* AppDelegate.m in Sources */,
 				D43D7FB118469A0C0069A692 /* SubscriptionWindowController.m in Sources */,
+				D4A03D29184B7F0400479112 /* FeedLoader.m in Sources */,
 				D43D7F80184699360069A692 /* main.m in Sources */,
+				D4388CCC184E7FD90065B863 /* XmlParserDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
