@@ -83,7 +83,7 @@
                                                             <rect key="frame" x="0.0" y="115" width="324" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="QWh-1z-lJg">
-                                                                <dateFormatter key="formatter" dateStyle="medium" timeStyle="short" id="U7M-2p-OQL"/>
+                                                                <dateFormatter key="formatter" dateStyle="medium" timeStyle="short" doesRelativeDateFormatting="YES" id="U7M-2p-OQL"/>
                                                                 <font key="font" size="9" name="LucidaGrande"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
