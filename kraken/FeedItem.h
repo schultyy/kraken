@@ -14,6 +14,6 @@
 
 @property (retain) NSString *link;
 
-@property (retain) NSString *description;
+@property (retain) NSString *descriptionText;
 
 @end

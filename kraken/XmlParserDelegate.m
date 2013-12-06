@@ -42,11 +42,6 @@ NSInteger const ParserStateEntry = 1;
         return;
     }
     
-    if([elementName isEqualToString:@"description"]){
-        //No, we don't do description
-        return;
-    }
-    
     SEL elementSelector = NSSelectorFromString(elementName);
     
     if(state == ParserStateHeader){
@@ -56,7 +51,11 @@ NSInteger const ParserStateEntry = 1;
         }
     }
     else{
-        if([currentFeedItem respondsToSelector:elementSelector]){
+        if([elementName isEqualToString:@"description"]){
+            [currentFeedItem setDescriptionText: cleanedBuffer];
+            buffer = nil;
+        }
+        else if([currentFeedItem respondsToSelector:elementSelector]){
             [currentFeedItem setValue:cleanedBuffer forKey:elementName];
             buffer = nil;
         }
@@ -67,8 +66,8 @@ NSInteger const ParserStateEntry = 1;
     if([elementName isEqualToString:@"item"]){
         state = ParserStateEntry;
         currentFeedItem = [[FeedItem alloc] init];
-        buffer = nil;
     }
+    buffer = nil;
 }
 
 -(void)parserDidStartDocument:(NSXMLParser *)parser{

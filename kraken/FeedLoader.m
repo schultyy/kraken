@@ -23,9 +23,10 @@
     
     BOOL parsedSuccessfully = [parser parse];
     
-    NSLog(@"parsed successfully: %hhd", parsedSuccessfully);
-    
-    return [delegate parserResults];
+    if(parsedSuccessfully){
+        return [delegate parserResults];
+    }
+    return nil;
 }
 
 @end

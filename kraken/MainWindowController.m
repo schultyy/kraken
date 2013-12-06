@@ -45,10 +45,8 @@
 
 -(void) processFeed: (NSString *) url{
     FeedLoader *loader = [[FeedLoader alloc] init];
-    NSLog(@"processing feed %@", url);
     id feedItems = [loader loadFeeds:[NSArray arrayWithObject:url]];
     [self setFeedItems:feedItems];
-    NSLog(@"Feed Items count: %lu", (unsigned long)[feedItems count]);
     [self willChangeValueForKey:@"feedItems"];
     [self didChangeValueForKey:@"feedItems"];
 }

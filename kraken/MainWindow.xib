@@ -11,7 +11,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
+        <window title="kraken" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="328" height="565"/>
@@ -20,14 +20,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="328" height="565"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySW-AE-ibf">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="115" horizontalPageScroll="10" verticalLineScroll="115" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySW-AE-ibf">
                         <rect key="frame" x="-1" y="-1" width="330" height="567"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="qKG-Em-OpA">
                             <rect key="frame" x="1" y="1" width="328" height="565"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="Yif-Fz-alb">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="113" rowSizeStyle="automatic" viewBased="YES" id="Yif-Fz-alb">
                                     <rect key="frame" x="0.0" y="0.0" width="328" height="565"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -48,11 +48,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="Nvh-xy-GaE">
-                                                    <rect key="frame" x="1" y="1" width="325" height="17"/>
+                                                    <rect key="frame" x="1" y="1" width="325" height="113"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVe-F1-qWV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="325" height="17"/>
+                                                            <rect key="frame" x="0.0" y="81" width="325" height="32"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="yt8-at-QVx">
                                                                 <font key="font" metaFont="system"/>
@@ -60,11 +60,23 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="Nvh-xy-GaE" name="displayPatternValue1" keyPath="objectValue.title" id="Lml-cb-4nU">
+                                                                <binding destination="Nvh-xy-GaE" name="value" keyPath="objectValue.title" id="ihY-c6-cTv">
                                                                     <dictionary key="options">
-                                                                        <string key="NSDisplayPattern">%{value1}@</string>
+                                                                        <string key="NSNullPlaceholder">ABC</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                            </connections>
+                                                        </textField>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8r-mm-9g0">
+                                                            <rect key="frame" x="1" y="3" width="324" height="70"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="keQ-kR-0ll">
+                                                                <font key="font" size="9" name="LucidaGrande"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="Nvh-xy-GaE" name="value" keyPath="objectValue.descriptionText" id="OTw-ca-5Qq"/>
                                                             </connections>
                                                         </textField>
                                                     </subviews>
@@ -93,16 +105,18 @@
                     </scrollView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ySW-AE-ibf" secondAttribute="trailing" constant="-1" id="QhM-vp-fkx"/>
-                    <constraint firstItem="ySW-AE-ibf" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="-1" id="SA2-5h-q8h"/>
-                    <constraint firstItem="ySW-AE-ibf" firstAttribute="top" secondItem="2" secondAttribute="top" constant="-1" id="i25-Au-aug"/>
-                    <constraint firstAttribute="bottom" secondItem="ySW-AE-ibf" secondAttribute="bottom" constant="-1" id="nhF-ty-G2X"/>
+                    <constraint firstItem="ySW-AE-ibf" firstAttribute="top" secondItem="2" secondAttribute="top" constant="-1" id="b2C-zc-I3z"/>
+                    <constraint firstAttribute="bottom" secondItem="ySW-AE-ibf" secondAttribute="bottom" constant="-1" id="sO8-ij-oNz"/>
+                    <constraint firstAttribute="trailing" secondItem="ySW-AE-ibf" secondAttribute="trailing" constant="-1" id="vdh-gN-a91"/>
+                    <constraint firstItem="ySW-AE-ibf" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="-1" id="wnj-w6-xvx"/>
                 </constraints>
             </view>
         </window>
         <arrayController objectClassName="FeedItem" automaticallyPreparesContent="YES" id="Zax-gp-sy9">
             <declaredKeys>
                 <string>title</string>
+                <string>descriptionText</string>
+                <string>link</string>
             </declaredKeys>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="self.feedItems" id="WDv-H3-ldu"/>
