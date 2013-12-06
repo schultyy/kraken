@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface MainWindowController : NSWindowController{
+    NSSortDescriptor *dateDescriptor;
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;

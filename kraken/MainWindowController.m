@@ -21,6 +21,7 @@
     if (self) {
         // Initialization code here.
         [self setFeedItems: [[NSMutableArray alloc] init]];
+        dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"pubDate" ascending:NO];
     }
     return self;
 }
@@ -48,6 +49,9 @@
     FeedLoader *loader = [[FeedLoader alloc] init];
     id feedItems = [loader loadFeeds:[NSArray arrayWithObject:url]];
     [[self feedItems] addObjectsFromArray:feedItems];
+    
+    [[self feedItems] sortUsingDescriptors: @[dateDescriptor]];
+    
     [self willChangeValueForKey:@"feedItems"];
     [self didChangeValueForKey:@"feedItems"];
 }
