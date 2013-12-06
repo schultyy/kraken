@@ -20,6 +20,7 @@
     self = [super initWithWindowNibName:@"MainWindow"];
     if (self) {
         // Initialization code here.
+        [self setFeedItems: [[NSMutableArray alloc] init]];
     }
     return self;
 }
@@ -46,7 +47,7 @@
 -(void) processFeed: (NSString *) url{
     FeedLoader *loader = [[FeedLoader alloc] init];
     id feedItems = [loader loadFeeds:[NSArray arrayWithObject:url]];
-    [self setFeedItems:feedItems];
+    [[self feedItems] addObjectsFromArray:feedItems];
     [self willChangeValueForKey:@"feedItems"];
     [self didChangeValueForKey:@"feedItems"];
 }
