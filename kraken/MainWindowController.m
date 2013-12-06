@@ -35,11 +35,17 @@
 }
 
 -(void) loadArticles{
-
+    NSArray *feedUrls = [self feeds];
+    for(NSInteger i = 0; i < [feedUrls count]; i++){
+        NSString* urlStr = [[feedUrls objectAtIndex:i] valueForKey: @"feedUrl"];
+        
+        [self processFeed:urlStr];
+    }
 }
 
 -(void) processFeed: (NSString *) url{
     FeedLoader *loader = [[FeedLoader alloc] init];
+    NSLog(@"processing feed %@", url);
     [loader loadFeeds:[NSArray arrayWithObject:url]];
 }
 

@@ -14,6 +14,9 @@
     NSMutableArray  *parserResults;
     FeedItem        *currentFeedItem;
     FeedHeader      *feedHeader;
+    NSDictionary    *functionTable;
+    NSMutableString *buffer;
+    NSInteger       state;
 }
 
 @end
