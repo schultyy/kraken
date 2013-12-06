@@ -16,4 +16,6 @@
 
 @property (retain) NSString *descriptionText;
 
+@property (retain) NSDate *pubDate;
+
 @end

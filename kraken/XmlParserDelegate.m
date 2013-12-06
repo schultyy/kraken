@@ -55,6 +55,19 @@ NSInteger const ParserStateEntry = 1;
             [currentFeedItem setDescriptionText: cleanedBuffer];
             buffer = nil;
         }
+        else if([elementName isEqualToString:@"pubDate"]){
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+
+            NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+            [formatter setLocale: usLocale];
+            
+            [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
+            
+            NSDate *date = [formatter dateFromString:cleanedBuffer];
+            
+            [currentFeedItem setPubDate: date];
+            buffer = nil;
+        }
         else if([currentFeedItem respondsToSelector:elementSelector]){
             [currentFeedItem setValue:cleanedBuffer forKey:elementName];
             buffer = nil;
