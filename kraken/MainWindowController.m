@@ -29,6 +29,7 @@
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    
     AppDelegate *delegate = (AppDelegate*) [[NSApplication sharedApplication] delegate];
     self.managedObjectContext = delegate.managedObjectContext;
     [self loadArticles];
@@ -38,7 +39,6 @@
     NSArray *feedUrls = [self feeds];
     for(NSInteger i = 0; i < [feedUrls count]; i++){
         NSString* urlStr = [[feedUrls objectAtIndex:i] valueForKey: @"feedUrl"];
-        
         [self processFeed:urlStr];
     }
 }
@@ -46,7 +46,11 @@
 -(void) processFeed: (NSString *) url{
     FeedLoader *loader = [[FeedLoader alloc] init];
     NSLog(@"processing feed %@", url);
-    [loader loadFeeds:[NSArray arrayWithObject:url]];
+    id feedItems = [loader loadFeeds:[NSArray arrayWithObject:url]];
+    [self setFeedItems:feedItems];
+    NSLog(@"Feed Items count: %lu", (unsigned long)[feedItems count]);
+    [self willChangeValueForKey:@"feedItems"];
+    [self didChangeValueForKey:@"feedItems"];
 }
 
 -(NSArray *) feeds{

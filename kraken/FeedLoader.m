@@ -25,7 +25,7 @@
     
     NSLog(@"parsed successfully: %hhd", parsedSuccessfully);
     
-    return nil;
+    return [delegate parserResults];
 }
 
 @end

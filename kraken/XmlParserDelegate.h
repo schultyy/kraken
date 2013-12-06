@@ -11,12 +11,13 @@
 #import "FeedHeader.h"
 
 @interface XmlParserDelegate : NSObject<NSXMLParserDelegate>{
-    NSMutableArray  *parserResults;
     FeedItem        *currentFeedItem;
     FeedHeader      *feedHeader;
     NSDictionary    *functionTable;
     NSMutableString *buffer;
     NSInteger       state;
 }
+
+@property (retain) NSMutableArray  *parserResults;
 
 @end

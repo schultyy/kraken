@@ -13,6 +13,6 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
--(NSArray *) feeds;
+@property (retain) NSArray *feedItems;
 
 @end

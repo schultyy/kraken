@@ -18,7 +18,7 @@ NSInteger const ParserStateEntry = 1;
 -(id) init{
     self = [super init];
     if(self){
-        parserResults = [[NSMutableArray alloc] init];
+        [self setParserResults: [[NSMutableArray alloc] init]];
         state = ParserStateHeader;
     }
     return self;
@@ -38,7 +38,7 @@ NSInteger const ParserStateEntry = 1;
     NSString* cleanedBuffer = [buffer stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
 
     if ([elementName isEqualToString:@"item"]) {
-        [parserResults addObject: currentFeedItem];
+        [[self parserResults] addObject:currentFeedItem];
         return;
     }
     
