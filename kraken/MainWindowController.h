@@ -7,13 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TimelineViewController.h"
 
-@interface MainWindowController : NSWindowController{
-    NSSortDescriptor *dateDescriptor;
-}
+@interface MainWindowController : NSWindowController
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (retain) TimelineViewController *timelineController;
 
-@property (retain) NSMutableArray *feedItems;
+@property IBOutlet NSBox *currentView;
 
 @end

@@ -7,8 +7,7 @@
 //
 
 #import "MainWindowController.h"
-#include "AppDelegate.h"
-#include "FeedLoader.h"
+#import "TimelineViewController.h"
 
 @interface MainWindowController ()
 
@@ -19,50 +18,16 @@
 - (id)init{
     self = [super initWithWindowNibName:@"MainWindow"];
     if (self) {
-        // Initialization code here.
-        [self setFeedItems: [[NSMutableArray alloc] init]];
-        dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"pubDate" ascending:NO];
+        [self setTimelineController:[[TimelineViewController alloc] init]];
     }
     return self;
 }
 
-- (void)windowDidLoad
-{
-    [super windowDidLoad];
+-(void) windowDidLoad{
+    [[self timelineController] loadArticles];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    id timelineView = [[self timelineController] view];
     
-    AppDelegate *delegate = (AppDelegate*) [[NSApplication sharedApplication] delegate];
-    self.managedObjectContext = delegate.managedObjectContext;
-    [self loadArticles];
+    [[self currentView] setContentView: timelineView];
 }
-
--(void) loadArticles{
-    NSArray *feedUrls = [self feeds];
-    for(NSInteger i = 0; i < [feedUrls count]; i++){
-        NSString* urlStr = [[feedUrls objectAtIndex:i] valueForKey: @"feedUrl"];
-        [self processFeed:urlStr];
-    }
-}
-
--(void) processFeed: (NSString *) url{
-    FeedLoader *loader = [[FeedLoader alloc] init];
-    id feedItems = [loader loadFeeds:[NSArray arrayWithObject:url]];
-    [[self feedItems] addObjectsFromArray:feedItems];
-    
-    [[self feedItems] sortUsingDescriptors: @[dateDescriptor]];
-    
-    [self willChangeValueForKey:@"feedItems"];
-    [self didChangeValueForKey:@"feedItems"];
-}
-
--(NSArray *) feeds{
-    id fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity: [NSEntityDescription entityForName:@"Feed"
-                                         inManagedObjectContext: [self managedObjectContext]]];
-    id context = [self managedObjectContext];
-    NSError *error = nil;
-    return [context executeFetchRequest:fetchRequest error:&error];
-}
-
 @end
