@@ -10,6 +10,8 @@
 
 @interface FeedItem : NSObject
 
+@property (retain) NSString *channelTitle;
+
 @property (retain) NSString *title;
 
 @property (retain) NSString *link;

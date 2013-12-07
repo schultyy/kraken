@@ -79,6 +79,7 @@ NSInteger const ParserStateEntry = 1;
     if([elementName isEqualToString:@"item"]){
         state = ParserStateEntry;
         currentFeedItem = [[FeedItem alloc] init];
+        [currentFeedItem setChannelTitle: [feedHeader title]];
     }
     buffer = nil;
 }
