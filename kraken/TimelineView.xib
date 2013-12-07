@@ -144,6 +144,12 @@
                         <action selector="markAsRead:" target="-2" id="WWt-LO-njc"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Open" id="HEE-7M-0GB">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openArticle:" target="-2" id="xmB-fm-ZZi"/>
+                    </connections>
+                </menuItem>
             </items>
         </menu>
     </objects>

@@ -23,4 +23,6 @@
 -(void) clear;
 
 -(IBAction) markAsRead:(id) sender;
+
+-(IBAction)openArticle:(id)sender;
 @end

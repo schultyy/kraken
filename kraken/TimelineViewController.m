@@ -90,12 +90,8 @@
 
 -(IBAction) markAsRead:(id) sender{
     //Just in case nothing's selected, return
-    if([[self selections] count] == 0){
-        return;
-    }
-    NSInteger index = [[self selections] firstIndex];
-    
-    FeedItem *feedItem = [[self feedItems] objectAtIndex: index];
+
+    FeedItem *feedItem = [self selectedFeedItem];
     
     NSManagedObject *readEntry = [NSEntityDescription insertNewObjectForEntityForName:@"FeedEntry" inManagedObjectContext: self.managedObjectContext];
     
@@ -103,9 +99,32 @@
     
     [[self managedObjectContext] save: nil];
     
-    [[self feedItems] removeObjectAtIndex: index];
+    [[self feedItems] removeObjectAtIndex: [self selectedIndex]];
     [self willChangeValueForKey:@"feedItems"];
     [self didChangeValueForKey:@"feedItems"];
+}
+
+-(NSInteger) selectedIndex{
+    return [[self selections] firstIndex];
+}
+
+-(FeedItem *) selectedFeedItem{
+    if([[self selections] count] == 0){
+        return nil;
+    }
+    
+    return [[self feedItems] objectAtIndex: [self selectedIndex]];
+}
+
+-(IBAction) openArticle: (id) sender{
+
+    NSString *url = [[self selectedFeedItem] link];
+    
+    if(url == nil){
+        return;
+    }
+    
+    [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: url]];
 }
 
 @end
