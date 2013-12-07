@@ -25,4 +25,7 @@
 -(IBAction) markAsRead:(id) sender;
 
 -(IBAction)openArticle:(id)sender;
+
+-(IBAction)fav:(id)sender;
+
 @end

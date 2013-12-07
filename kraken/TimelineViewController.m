@@ -91,19 +91,71 @@
     return [context executeFetchRequest:fetchRequest error:&error];
 }
 
+-(NSManagedObject *) createNewFeedEntry{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"FeedEntry" inManagedObjectContext: self.managedObjectContext];
+}
+
+-(NSManagedObject *) fetchFeedEntry: (NSString *) guid{
+    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat: @"guid == %@", guid];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity: [NSEntityDescription entityForName:@"FeedEntry" inManagedObjectContext: self.managedObjectContext]];
+    
+    [request setPredicate: searchPredicate];
+    
+    NSError *error = nil;
+    
+    NSArray *resultset = [[self managedObjectContext] executeFetchRequest:request error:&error];
+    
+    if([resultset count] == 0){
+        return 0;
+    }
+    return [resultset objectAtIndex:0];
+}
+
+-(void) refreshBindings{
+    [self willChangeValueForKey:@"feedItems"];
+    [self didChangeValueForKey:@"feedItems"];
+}
+
+- (NSManagedObject *) fetchOrCreateFeedEntry: (NSString *) guid{
+    
+    NSManagedObject *feedEntry = nil;
+    
+    feedEntry = [self fetchFeedEntry: guid];
+    
+    if(!feedEntry){
+        feedEntry = [self createNewFeedEntry];
+        [feedEntry setValue:guid forKey:@"guid"];
+    }
+    return feedEntry;
+}
+
 -(IBAction) markAsRead:(id) sender{
-    //Just in case nothing's selected, return
 
     FeedItem *feedItem = [self selectedFeedItem];
     
-    NSManagedObject *readEntry = [NSEntityDescription insertNewObjectForEntityForName:@"FeedEntry" inManagedObjectContext: self.managedObjectContext];
+    NSManagedObject *readEntry = nil;
     
-    [readEntry setValue:feedItem.guid forKey:@"guid"];
+    readEntry = [self fetchOrCreateFeedEntry:feedItem.guid];
+
     [readEntry setValue: [NSNumber numberWithBool:YES] forKey:@"read"];
     
     [[self managedObjectContext] save: nil];
     
     [[self feedItems] removeObjectAtIndex: [self selectedIndex]];
+    [self refreshBindings];
+}
+
+-(IBAction)fav:(id)sender{
+    FeedItem *feedItem = [self selectedFeedItem];
+    
+    NSManagedObject *favEntry = [self fetchOrCreateFeedEntry:feedItem.guid];
+    
+    [favEntry setValue: [NSNumber numberWithBool:YES] forKey:@"fav"];
+    
+    [[self managedObjectContext] save: nil];
+    
     [self willChangeValueForKey:@"feedItems"];
     [self didChangeValueForKey:@"feedItems"];
 }

@@ -156,6 +156,12 @@
                         <action selector="markAsRead:" target="-2" id="WWt-LO-njc"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Fav" id="FaQ-sD-cAn">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="fav:" target="-2" id="JNm-St-QsD"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Open" id="HEE-7M-0GB">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
