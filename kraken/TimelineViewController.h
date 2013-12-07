@@ -16,7 +16,11 @@
 
 @property (retain) NSMutableArray *feedItems;
 
+@property (retain) NSMutableIndexSet *selections;
+
 -(void) loadArticles;
 
 -(void) clear;
+
+-(IBAction) markAsRead:(id) sender;
 @end

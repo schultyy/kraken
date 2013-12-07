@@ -9,6 +9,8 @@
 #import "TimelineViewController.h"
 #include "AppDelegate.h"
 #include "FeedLoader.h"
+#include "FeedItem.h"
+#include "Underscore.h"
 
 @interface TimelineViewController ()
 
@@ -21,6 +23,7 @@
     if (self) {
         // Initialization code here.
         [self setFeedItems: [[NSMutableArray alloc] init]];
+        [self setSelections: [[NSMutableIndexSet alloc]init]];
         dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"pubDate" ascending:NO];
         AppDelegate *delegate = (AppDelegate*) [[NSApplication sharedApplication] delegate];
         self.managedObjectContext = delegate.managedObjectContext;
@@ -43,12 +46,37 @@
 -(void) processFeed: (NSString *) url{
     FeedLoader *loader = [[FeedLoader alloc] init];
     id feedItems = [loader loadFeeds:[NSArray arrayWithObject:url]];
+    
+    NSArray *readArticleIds = [self loadReadArticles];
+    
+    //Check which elements has already been read
+    feedItems = Underscore.array(feedItems).reject(^(id obj){
+        return [readArticleIds containsObject:[obj valueForKey: @"guid"]];
+    }).unwrap;
+    
     [[self feedItems] addObjectsFromArray:feedItems];
     
     [[self feedItems] sortUsingDescriptors: @[dateDescriptor]];
     
     [self willChangeValueForKey:@"feedItems"];
     [self didChangeValueForKey:@"feedItems"];
+}
+
+-(NSArray *) loadReadArticles{
+    NSFetchRequest *fetchReadArticles = [[NSFetchRequest alloc] init];
+    [fetchReadArticles setEntity: [NSEntityDescription entityForName:@"FeedEntry" inManagedObjectContext: self.managedObjectContext]];
+    
+    NSError *error = nil;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchReadArticles error:&error];
+    if (error) {
+        NSLog(@"Error: %@\n%@", [error localizedDescription], [error userInfo]);
+        return nil;
+    }
+    return Underscore.array(results)
+              .map(^(id obj) {
+                        return [obj valueForKey:@"guid"];
+                    })
+              .unwrap;
 }
 
 -(NSArray *) feeds{
@@ -60,8 +88,24 @@
     return [context executeFetchRequest:fetchRequest error:&error];
 }
 
--(void) markAsRead:(id) feedEntry{
-    NSLog(@"Marked as read: %@", feedEntry);
+-(IBAction) markAsRead:(id) sender{
+    //Just in case nothing's selected, return
+    if([[self selections] count] == 0){
+        return;
+    }
+    NSInteger index = [[self selections] firstIndex];
+    
+    FeedItem *feedItem = [[self feedItems] objectAtIndex: index];
+    
+    NSManagedObject *readEntry = [NSEntityDescription insertNewObjectForEntityForName:@"FeedEntry" inManagedObjectContext: self.managedObjectContext];
+    
+    [readEntry setValue:feedItem.guid forKey:@"guid"];
+    
+    [[self managedObjectContext] save: nil];
+    
+    [[self feedItems] removeObjectAtIndex: index];
+    [self willChangeValueForKey:@"feedItems"];
+    [self didChangeValueForKey:@"feedItems"];
 }
 
 @end

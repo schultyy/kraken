@@ -48,7 +48,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ruG-wQ-0J1">
-                                                        <rect key="frame" x="0.0" y="135" width="325" height="32"/>
+                                                        <rect key="frame" x="0.0" y="132" width="324" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="knD-sy-QGZ">
                                                             <font key="font" metaFont="system"/>
@@ -64,9 +64,9 @@
                                                         </connections>
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wxd-zg-3Zf">
-                                                        <rect key="frame" x="0.0" y="3" width="324" height="104"/>
+                                                        <rect key="frame" x="0.0" y="47" width="324" height="57"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="K7C-qu-8ky">
+                                                        <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" allowsEditingTextAttributes="YES" id="K7C-qu-8ky">
                                                             <font key="font" size="9" name="LucidaGrande"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -76,7 +76,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-4o-J0K">
-                                                        <rect key="frame" x="0.0" y="115" width="324" height="21"/>
+                                                        <rect key="frame" x="0.0" y="112" width="324" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="Hlb-M5-Dg8">
                                                             <dateFormatter key="formatter" dateStyle="medium" timeStyle="short" doesRelativeDateFormatting="YES" id="AdK-H4-wdT"/>
@@ -98,6 +98,7 @@
                                 </tableColumns>
                                 <connections>
                                     <binding destination="poS-dh-mE4" name="content" keyPath="arrangedObjects" id="pSy-vr-6t8"/>
+                                    <binding destination="poS-dh-mE4" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="pSy-vr-6t8" id="prP-YX-b2f"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -111,6 +112,9 @@
                         <rect key="frame" x="-15" y="17" width="16" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
+                    <connections>
+                        <outlet property="menu" destination="Lir-lJ-plv" id="Y6S-ua-QWy"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <constraints>
@@ -127,9 +131,20 @@
                 <string>pubDate</string>
             </declaredKeys>
             <connections>
+                <binding destination="-2" name="selectionIndexes" keyPath="selections" id="9Ym-c8-jTy"/>
                 <binding destination="-2" name="contentArray" keyPath="self.feedItems" id="TOO-yd-mGz"/>
             </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="b1g-WF-c3S"/>
+        <menu id="Lir-lJ-plv">
+            <items>
+                <menuItem title="Mark as read" id="qt3-VV-KAa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="markAsRead:" target="-2" id="WWt-LO-njc"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
     </objects>
 </document>
