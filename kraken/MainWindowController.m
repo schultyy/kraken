@@ -28,6 +28,18 @@
     
     id timelineView = [[self timelineController] view];
     
+    NSProgressIndicator *indicator = [[NSProgressIndicator alloc] init];
+    
+    [indicator setStyle:NSProgressIndicatorSpinningStyle];
+    
+    [[self currentView] setContentView:indicator];
+    
+    id sender = self;
+    
+    [indicator startAnimation:sender];
+    
     [[self currentView] setContentView: timelineView];
+    
+    [indicator stopAnimation:sender];
 }
 @end
