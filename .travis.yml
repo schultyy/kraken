@@ -1,2 +1,3 @@
 language: objective-c
 xcode_project: kraken.xcworkspace
+rvm: 1.9.3
