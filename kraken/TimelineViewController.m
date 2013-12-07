@@ -73,6 +73,9 @@
         return nil;
     }
     return Underscore.array(results)
+                .reject(^(id obj){
+                    return (BOOL)([obj valueForKey:@"read"] && 0);
+                })
               .map(^(id obj) {
                         return [obj valueForKey:@"guid"];
                     })
@@ -96,6 +99,7 @@
     NSManagedObject *readEntry = [NSEntityDescription insertNewObjectForEntityForName:@"FeedEntry" inManagedObjectContext: self.managedObjectContext];
     
     [readEntry setValue:feedItem.guid forKey:@"guid"];
+    [readEntry setValue: [NSNumber numberWithBool:YES] forKey:@"read"];
     
     [[self managedObjectContext] save: nil];
     

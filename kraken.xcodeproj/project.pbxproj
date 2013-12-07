@@ -73,6 +73,7 @@
 		D43D7FAB184699C60069A692 /* SubscriptionWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriptionWindow.xib; sourceTree = "<group>"; };
 		D43D7FAF18469A0C0069A692 /* SubscriptionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionWindowController.h; sourceTree = "<group>"; };
 		D43D7FB018469A0C0069A692 /* SubscriptionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionWindowController.m; sourceTree = "<group>"; };
+		D483E7301853CFE900C6FA37 /* kraken.v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = kraken.v2.xcdatamodel; sourceTree = "<group>"; };
 		D4A03D1F184B6B4E00479112 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		D4A03D21184B6B8700479112 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		D4A03D22184B6B8700479112 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
@@ -616,9 +617,10 @@
 		D43D7F8B184699360069A692 /* kraken.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D483E7301853CFE900C6FA37 /* kraken.v2.xcdatamodel */,
 				D43D7F8C184699360069A692 /* kraken.xcdatamodel */,
 			);
-			currentVersion = D43D7F8C184699360069A692 /* kraken.xcdatamodel */;
+			currentVersion = D483E7301853CFE900C6FA37 /* kraken.v2.xcdatamodel */;
 			path = kraken.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
