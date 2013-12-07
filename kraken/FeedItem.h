@@ -18,4 +18,6 @@
 
 @property (retain) NSDate *pubDate;
 
+@property (retain) NSString *guid;
+
 @end

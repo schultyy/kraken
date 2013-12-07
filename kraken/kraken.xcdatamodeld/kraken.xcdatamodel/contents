@@ -4,7 +4,11 @@
         <attribute name="feedUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="FeedEntry" syncable="YES">
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Feed" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FeedEntry" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

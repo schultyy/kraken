@@ -60,4 +60,8 @@
     return [context executeFetchRequest:fetchRequest error:&error];
 }
 
+-(void) markAsRead:(id) feedEntry{
+    NSLog(@"Marked as read: %@", feedEntry);
+}
+
 @end
