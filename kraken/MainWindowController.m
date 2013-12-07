@@ -23,7 +23,10 @@
     return self;
 }
 
--(void) windowDidLoad{
+-(IBAction)reload:(id)sender{
+    
+    [[self timelineController] clear];
+    
     [[self timelineController] loadArticles];
     
     id timelineView = [[self timelineController] view];
@@ -34,12 +37,14 @@
     
     [[self currentView] setContentView:indicator];
     
-    id sender = self;
-    
     [indicator startAnimation:sender];
     
     [[self currentView] setContentView: timelineView];
     
     [indicator stopAnimation:sender];
+}
+
+-(void) windowDidLoad{
+    [self reload: self];
 }
 @end

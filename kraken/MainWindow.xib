@@ -15,31 +15,45 @@
         <window title="kraken" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="328" height="565"/>
+            <rect key="contentRect" x="196" y="240" width="500" height="565"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="328" height="565"/>
+                <rect key="frame" x="0.0" y="0.0" width="500" height="565"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="gwU-A9-78c">
-                        <rect key="frame" x="-3" y="-4" width="334" height="571"/>
+                        <rect key="frame" x="74" y="-4" width="429" height="571"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="332" height="569"/>
+                            <rect key="frame" x="1" y="1" width="427" height="569"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alh-Gf-e77">
+                        <rect key="frame" x="20" y="513" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRefreshTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qZT-K5-m33">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="reload:" target="-2" id="dvy-NS-MDk"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="gwU-A9-78c" secondAttribute="trailing" id="8jt-1J-HDf"/>
-                    <constraint firstItem="gwU-A9-78c" firstAttribute="top" secondItem="2" secondAttribute="top" id="AzS-uc-MGc"/>
-                    <constraint firstItem="gwU-A9-78c" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="hz2-dl-rwl"/>
-                    <constraint firstAttribute="bottom" secondItem="gwU-A9-78c" secondAttribute="bottom" id="oVc-bB-5CY"/>
+                    <constraint firstItem="gwU-A9-78c" firstAttribute="top" secondItem="2" secondAttribute="top" id="5uy-Q7-zRD"/>
+                    <constraint firstAttribute="trailing" secondItem="gwU-A9-78c" secondAttribute="trailing" id="Zjc-Zx-6NZ"/>
+                    <constraint firstItem="gwU-A9-78c" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="77" id="dnv-hB-3HQ"/>
+                    <constraint firstAttribute="bottom" secondItem="gwU-A9-78c" secondAttribute="bottom" id="shp-of-SFB"/>
                 </constraints>
             </view>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="Yhw-HI-S9q"/>
     </objects>
+    <resources>
+        <image name="NSRefreshTemplate" width="10" height="12"/>
+    </resources>
 </document>

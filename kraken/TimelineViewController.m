@@ -28,6 +28,10 @@
     return self;
 }
 
+-(void) clear{
+    [[self feedItems] removeAllObjects];
+}
+
 -(void) loadArticles{
     NSArray *feedUrls = [self feeds];
     for(NSInteger i = 0; i < [feedUrls count]; i++){

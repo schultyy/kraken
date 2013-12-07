@@ -17,4 +17,6 @@
 @property (retain) NSMutableArray *feedItems;
 
 -(void) loadArticles;
+
+-(void) clear;
 @end

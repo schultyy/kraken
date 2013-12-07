@@ -15,4 +15,6 @@
 
 @property IBOutlet NSBox *currentView;
 
+-(IBAction)reload:(id)sender;
+
 @end
