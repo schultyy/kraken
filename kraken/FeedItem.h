@@ -22,4 +22,6 @@
 
 @property (retain) NSString *guid;
 
+-(NSString *) teaser;
+
 @end

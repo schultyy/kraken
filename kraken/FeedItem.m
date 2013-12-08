@@ -10,4 +10,12 @@
 
 @implementation FeedItem
 
+-(NSString *) teaser{
+    if([[self descriptionText] length] < 100){
+        return [self descriptionText];
+    }
+    NSString *teaser = [[self descriptionText] substringWithRange: NSMakeRange(0, 100)];
+    return [teaser stringByAppendingString:@"..."];
+}
+
 @end
