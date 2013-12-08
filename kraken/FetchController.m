@@ -21,21 +21,24 @@
         [self setSelections: [[NSMutableIndexSet alloc]init]];
         [self setContextMenu: [[NSMenu alloc] initWithTitle:@"Context menu"]];
         
+        
         dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"pubDate" ascending:NO];
         AppDelegate *delegate = (AppDelegate*) [[NSApplication sharedApplication] delegate];
         self.managedObjectContext = delegate.managedObjectContext;
-        
-        [self buildContextMenu];
     }
     return self;
 }
 
 -(void) awakeFromNib{
+    [self buildContextMenu];
     [[self tableView] setMenu: [self contextMenu]];
 }
 
 -(void) buildContextMenu{
-    [[self contextMenu] insertItemWithTitle:@"open" action:@selector(open) keyEquivalent:@"" atIndex:0];
+    NSMenuItem *openItem = [[NSMenuItem alloc] initWithTitle:@"open" action:@selector(openArticle) keyEquivalent:@""];
+    [openItem setTarget:self];
+    
+    [[self contextMenu] insertItem:openItem atIndex:0];
 }
 
 -(void) clear{

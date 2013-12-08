@@ -27,8 +27,14 @@
 
 -(void) buildContextMenu{
     [super buildContextMenu];
-    [[self contextMenu] insertItemWithTitle:@"Mark as read" action:@selector(markAsRead) keyEquivalent:@"" atIndex:1];
-    [[self contextMenu] insertItemWithTitle:@"Fav" action:@selector(fav) keyEquivalent:@"" atIndex:2];
+    
+    NSMenuItem *markAsRead = [[NSMenuItem alloc] initWithTitle:@"Mark as read" action:@selector(markAsRead) keyEquivalent:@""];
+    [markAsRead setTarget:self];
+    NSMenuItem *fav        = [[NSMenuItem alloc] initWithTitle:@"Fav" action:@selector(fav) keyEquivalent:@""];
+    [fav setTarget:self];
+    
+    [[self contextMenu] insertItem:markAsRead atIndex:1];
+    [[self contextMenu] insertItem:fav atIndex:2];
 }
 
 -(BOOL) canAddArticle:(FeedItem *)obj{

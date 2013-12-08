@@ -26,6 +26,8 @@
 }
 
 -(IBAction)showFavs:(id)sender{
+    [[self favTimelineController] clear];
+    [[self favTimelineController] loadArticles];
     id favView = [[self favTimelineController] view];
     [[self currentView] setContentView:favView];
 }

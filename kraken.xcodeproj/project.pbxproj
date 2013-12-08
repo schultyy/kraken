@@ -25,6 +25,8 @@
 		D43D7FA1184699360069A692 /* krakenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43D7FA0184699360069A692 /* krakenTests.m */; };
 		D43D7FAC184699C60069A692 /* SubscriptionWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43D7FAB184699C60069A692 /* SubscriptionWindow.xib */; };
 		D43D7FB118469A0C0069A692 /* SubscriptionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43D7FB018469A0C0069A692 /* SubscriptionWindowController.m */; };
+		D483E7331853DC3600C6FA37 /* FavTimelineControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D483E7321853DC3600C6FA37 /* FavTimelineControllerViewController.m */; };
+		D483E7361853DE6200C6FA37 /* FetchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D483E7351853DE6200C6FA37 /* FetchController.m */; };
 		D4A03D20184B6B4E00479112 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A03D1F184B6B4E00479112 /* MainWindow.xib */; };
 		D4A03D23184B6B8700479112 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A03D22184B6B8700479112 /* MainWindowController.m */; };
 		D4A03D29184B7F0400479112 /* FeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A03D28184B7F0400479112 /* FeedLoader.m */; };
@@ -74,6 +76,10 @@
 		D43D7FAF18469A0C0069A692 /* SubscriptionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionWindowController.h; sourceTree = "<group>"; };
 		D43D7FB018469A0C0069A692 /* SubscriptionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionWindowController.m; sourceTree = "<group>"; };
 		D483E7301853CFE900C6FA37 /* kraken.v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = kraken.v2.xcdatamodel; sourceTree = "<group>"; };
+		D483E7311853DC3600C6FA37 /* FavTimelineControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavTimelineControllerViewController.h; sourceTree = "<group>"; };
+		D483E7321853DC3600C6FA37 /* FavTimelineControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavTimelineControllerViewController.m; sourceTree = "<group>"; };
+		D483E7341853DE6200C6FA37 /* FetchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchController.h; sourceTree = "<group>"; };
+		D483E7351853DE6200C6FA37 /* FetchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchController.m; sourceTree = "<group>"; };
 		D4A03D1F184B6B4E00479112 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		D4A03D21184B6B8700479112 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		D4A03D22184B6B8700479112 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
@@ -215,6 +221,10 @@
 				D4A03D22184B6B8700479112 /* MainWindowController.m */,
 				D4AA193818533C3A00097B6A /* TimelineViewController.h */,
 				D4AA193918533C3A00097B6A /* TimelineViewController.m */,
+				D483E7311853DC3600C6FA37 /* FavTimelineControllerViewController.h */,
+				D483E7321853DC3600C6FA37 /* FavTimelineControllerViewController.m */,
+				D483E7341853DE6200C6FA37 /* FetchController.h */,
+				D483E7351853DE6200C6FA37 /* FetchController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -382,11 +392,13 @@
 				D43D7F8D184699360069A692 /* kraken.xcdatamodeld in Sources */,
 				D43D7F87184699360069A692 /* AppDelegate.m in Sources */,
 				D43D7FB118469A0C0069A692 /* SubscriptionWindowController.m in Sources */,
+				D483E7331853DC3600C6FA37 /* FavTimelineControllerViewController.m in Sources */,
 				D4388CD5184E91340065B863 /* FeedItem.m in Sources */,
 				D4388CD2184E909E0065B863 /* FeedHeader.m in Sources */,
 				D4A03D29184B7F0400479112 /* FeedLoader.m in Sources */,
 				D43D7F80184699360069A692 /* main.m in Sources */,
 				D4388CCC184E7FD90065B863 /* XmlParserDelegate.m in Sources */,
+				D483E7361853DE6200C6FA37 /* FetchController.m in Sources */,
 				D4AA193B18533C3A00097B6A /* TimelineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
