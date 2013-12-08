@@ -16,6 +16,8 @@
 
 @property (retain) FavTimelineControllerViewController *favTimelineController;
 
+@property (retain) NSNumber *canRefresh;
+
 @property IBOutlet NSBox *currentView;
 
 -(IBAction)reload:(id)sender;

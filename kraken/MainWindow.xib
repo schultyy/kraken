@@ -40,6 +40,7 @@
                         </buttonCell>
                         <connections>
                             <action selector="reload:" target="-2" id="dvy-NS-MDk"/>
+                            <binding destination="-2" name="enabled" keyPath="canRefresh" id="Yhf-Of-W3h"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r50-XX-rPh">
