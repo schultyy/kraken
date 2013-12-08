@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TimelineViewController">
             <connections>
+                <outlet property="tableView" destination="VNm-OM-xzo" id="Xeg-vm-JEY"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
@@ -124,9 +125,6 @@
                         <rect key="frame" x="-15" y="17" width="16" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <connections>
-                        <outlet property="menu" destination="Lir-lJ-plv" id="Y6S-ua-QWy"/>
-                    </connections>
                 </scrollView>
             </subviews>
             <constraints>
@@ -148,27 +146,5 @@
             </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="b1g-WF-c3S"/>
-        <menu id="Lir-lJ-plv">
-            <items>
-                <menuItem title="Mark as read" id="qt3-VV-KAa">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="markAsRead:" target="-2" id="WWt-LO-njc"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Fav" id="FaQ-sD-cAn">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="fav:" target="-2" id="JNm-St-QsD"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Open" id="HEE-7M-0GB">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="openArticle:" target="-2" id="xmB-fm-ZZi"/>
-                    </connections>
-                </menuItem>
-            </items>
-        </menu>
     </objects>
 </document>

@@ -42,6 +42,28 @@
                             <action selector="reload:" target="-2" id="dvy-NS-MDk"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r50-XX-rPh">
+                        <rect key="frame" x="20" y="491" width="41" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundTextured" title="TL" bezelStyle="texturedRounded" alignment="center" borderStyle="border" inset="2" id="94k-nu-oNs">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showTimeline:" target="-2" id="lsH-mz-bJp"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pHN-6Q-OVF">
+                        <rect key="frame" x="20" y="461" width="41" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundTextured" title="FAV" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="uv0-JQ-Fh8">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showFavs:" target="-2" id="ebD-dj-zb2"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="gwU-A9-78c" firstAttribute="top" secondItem="2" secondAttribute="top" id="5uy-Q7-zRD"/>

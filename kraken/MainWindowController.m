@@ -8,6 +8,7 @@
 
 #import "MainWindowController.h"
 #import "TimelineViewController.h"
+#import "FavTimelineControllerViewController.h"
 
 @interface MainWindowController ()
 
@@ -19,12 +20,25 @@
     self = [super initWithWindowNibName:@"MainWindow"];
     if (self) {
         [self setTimelineController:[[TimelineViewController alloc] init]];
+        [self setFavTimelineController: [[FavTimelineControllerViewController alloc] init]];
     }
     return self;
 }
 
--(IBAction)reload:(id)sender{
+-(IBAction)showFavs:(id)sender{
+    id favView = [[self favTimelineController] view];
+    [[self currentView] setContentView:favView];
+}
+
+-(IBAction)showTimeline:(id)sender{
     
+    id timelineView = [[self timelineController] view];
+    
+    [[self currentView] setContentView: timelineView];
+}
+
+-(IBAction)reload:(id)sender{
+
     [[self timelineController] clear];
     
     [[self timelineController] loadArticles];

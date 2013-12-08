@@ -8,13 +8,20 @@
 
 #import <Cocoa/Cocoa.h>
 #import "TimelineViewController.h"
+#import "FavTimelineControllerViewController.h"
 
 @interface MainWindowController : NSWindowController
 
 @property (retain) TimelineViewController *timelineController;
 
+@property (retain) FavTimelineControllerViewController *favTimelineController;
+
 @property IBOutlet NSBox *currentView;
 
 -(IBAction)reload:(id)sender;
+
+-(IBAction)showTimeline:(id)sender;
+
+-(IBAction)showFavs:(id)sender;
 
 @end

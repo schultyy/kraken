@@ -7,25 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "FetchController.h"
 
-@interface TimelineViewController : NSViewController{
-    NSSortDescriptor *dateDescriptor;
+@interface TimelineViewController : FetchController{
+    NSArray *readArticleIds;
 }
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+-(void) markAsRead;
 
-@property (retain) NSMutableArray *feedItems;
-
-@property (retain) NSMutableIndexSet *selections;
-
--(void) loadArticles;
-
--(void) clear;
-
--(IBAction) markAsRead:(id) sender;
-
--(IBAction)openArticle:(id)sender;
-
--(IBAction)fav:(id)sender;
+-(void)fav;
 
 @end
